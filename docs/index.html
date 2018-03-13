@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">Patrick Racenberg</div>
+      <div class="subtitle">Engineer</div>
+    </div>
+    <div class="masonry-layout"></div>
+  </div>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBofd5SmZYfrvqSAq2MkJUteQL8OThCyu0",
+      authDomain: "prtfl-6efca.firebaseapp.com",
+      databaseURL: "https://prtfl-6efca.firebaseio.com",
+      projectId: "prtfl-6efca",
+      storageBucket: "prtfl-6efca.appspot.com",
+      messagingSenderId: "173863653998"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
