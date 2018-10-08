@@ -11,16 +11,55 @@ body {
   width: 608px;
 }
 
-.title, .subtitle {
+.masonry-layout__panel-content {
+  background: black;
+}
+
+.description {
+  width: 100%;
+  color: white;
+  padding: 10px;
+}
+
+h1, h2 {
   font-size: 20px;
   padding: 2px 0;
   margin: 0 10px;
   font-weight: 300;
 }
 
+.hidden {
+  display: none;
+}
+
+h3 {
+  font-size: 16px;
+  padding: 5px 0 10px;
+  margin: 0;
+  font-weight: 500;
+}
+
+a {
+  color: white;
+  margin: 10px 10px 0 0;
+  display: inline-block;
+}
+
+.pad {
+  padding: 0 10px;
+}
+
+.margin {
+  margin: 0 10px 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 img, svg {
+  width: 100%;
   max-width: 300px;
-  margin: 0 10px 10px 10px;
 }
 
 .header {
