@@ -12,8 +12,11 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
     div.classList.add('masonry-layout__panel-content')
     var mySVG64 = window.btoa(datum.inline);
     div.innerHTML = `
-      <a href="${datum.liveHref}" target="_blank">
-        <img class="lazyload" src="data:image/svg+xml;base64,${mySVG64}" data-src="${datum.imgSrc}">
+      <a href="${datum.liveHref}" target="_blank" alt="${datum.title}">
+        <img class="lazyload"
+          alt="${datum.title}"
+          src="data:image/svg+xml;base64,${mySVG64}"
+          data-src="${datum.imgSrc}">
       </a>`
 
     li.appendChild(div);

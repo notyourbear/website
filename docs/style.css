@@ -1,7 +1,5 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 20px;
-  font-weight: 300;
 }
 
 .container {
@@ -14,8 +12,10 @@ body {
 }
 
 .title, .subtitle {
+  font-size: 20px;
   padding: 2px 0;
   margin: 0 10px;
+  font-weight: 300;
 }
 
 img, svg {
