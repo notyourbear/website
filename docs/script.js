@@ -9,6 +9,7 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
     li.classList.add('masonry-layout__panel');
 
     let div = document.createElement('div');
+    div.setAttribute('tabindex', '0');
     div.classList.add('masonry-layout__panel-content');
     div.classList.add('pointer');
     div.classList.add('margin');
@@ -29,6 +30,7 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
 
     div.innerHTML = innerHTML;
     div.addEventListener('click', openPopup)
+    div.addEventListener('keydown', onKeyDown.bind(div, openPopup));
     li.appendChild(div);
     fragment.appendChild(li);
   })
@@ -36,6 +38,12 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
   list.appendChild(fragment);
   lazyload();
 });
+
+function onKeyDown(cb, e) {
+  e.preventDefault();
+  if (e.keyCode !== 13) return;
+  cb.call(this, e, cb);
+}
 
 function openPopup(e) {
   e.preventDefault();
