@@ -4,12 +4,12 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
   let fragment = document.createDocumentFragment();
   let data = snapshot.val()
 
-  Object.values(data).forEach(function(datum) {
+  Object.values(data).forEach(function(datum, i) {
     let li = document.createElement('li');
     li.classList.add('masonry-layout__panel');
 
     let div = document.createElement('div');
-    div.setAttribute('tabindex', '0');
+    div.setAttribute('tabindex', 0);
     div.classList.add('masonry-layout__panel-content');
     div.classList.add('pointer');
     div.classList.add('margin');
@@ -40,9 +40,10 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
 });
 
 function onKeyDown(cb, e) {
-  e.preventDefault();
-  if (e.keyCode !== 13) return;
-  cb.call(this, e, cb);
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    cb.call(this, e, cb);
+  }
 }
 
 function openPopup(e) {
