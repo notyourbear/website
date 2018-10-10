@@ -29,8 +29,9 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
     innerHTML += `</div>`;
 
     div.innerHTML = innerHTML;
+    div.keydownlistenerbind = onKeyDown.bind(div, openPopup); //bind sets new function reference. trés annoying.
     div.addEventListener('click', openPopup)
-    div.addEventListener('keydown', onKeyDown.bind(div, openPopup));
+    div.addEventListener('keydown', div.keydownlistenerbind);
     li.appendChild(div);
     fragment.appendChild(li);
   })
@@ -49,6 +50,7 @@ function onKeyDown(cb, e) {
 function openPopup(e) {
   e.preventDefault();
   this.removeEventListener('click', openPopup);
+  this.removeEventListener('keydown', this.keydownlistenerbind);
   this.classList.toggle('pointer');
   let descriptorBlock = this.querySelector('.description');
   descriptorBlock.classList.toggle('hidden');
@@ -69,6 +71,7 @@ function closePopup(e) {
   // without this timeout the click will fire immediately on active click.. crazy.
   setTimeout(() => {
     parent.addEventListener('click', openPopup);
+    parent.addEventListener('keydown', parent.keydownlistenerbind);
     parent.classList.toggle('pointer');
   });
 }
