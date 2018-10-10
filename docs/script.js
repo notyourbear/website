@@ -20,7 +20,7 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
           src="data:image/svg+xml;base64,${mySVG64}"
           data-src="${datum.imgSrc}">
         <div class="hidden description">
-          <button class='xout'>x</button>
+          <button class='xout' alt="close description"><i class="far fa-times-circle"></i></button>
           <h3>${datum.title}</h3>`;
 
     if (datum.desc) innerHTML += `<div>${datum.desc}</div>`;
