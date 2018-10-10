@@ -24,8 +24,8 @@ firebase.database().ref('/').once('value').then(function(snapshot) {
           <h3>${datum.title}</h3>`;
 
     if (datum.desc) innerHTML += `<div>${datum.desc}</div>`;
-    if (datum.githubHref) innerHTML += `<a href="${datum.githubHref}" target="_blank" alt="link to github code">github</a>`;
-    if (datum.liveHref) innerHTML += `<a href="${datum.liveHref}" target="_blank" alt="link to site">site</a>`;
+    if (datum.githubHref) innerHTML += `<a href="${datum.githubHref}" target="_blank" alt="link to github code"><i class="fab fa-github-square"></i></a>`;
+    if (datum.liveHref) innerHTML += `<a href="${datum.liveHref}" target="_blank" alt="link to site"><i class="fas fa-caret-square-right"></i></a>`;
     innerHTML += `</div>`;
 
     div.innerHTML = innerHTML;
